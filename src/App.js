@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 
 import "./App.css";
+import generatePassword from "./constants/generatePassword";
+import Footer from "./layouts/Footer";
 
 const App = () => {
-  const [currentPassword, setCurrentPassword] = useState("");
+  const [words, setWords] = useState({ keyword: "", app: "" });
   const [password, setPassword] = useState("");
 
   const handleChange = (event) => {
-    const { value } = event.target;
+    const { name, value } = event.target;
 
-    setCurrentPassword(value);
+    setWords({ ...words, [name]: value });
   };
 
-  const handleClick = () => {
-    setPassword(currentPassword);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setPassword(generatePassword(words));
   };
 
   return (
@@ -26,19 +30,21 @@ const App = () => {
         </header>
         <main>
           <div className="wrapper">
-            <label>
-              Ingrese palabra clave
-              <input onChange={handleChange} />
-            </label>
-            <span id="password">{password}</span>
-            <button onClick={handleClick}>Generar</button>
+            <form onSubmit={handleSubmit}>
+              <label>
+                Ingrese palabra clave
+                <input name="keyword" onChange={handleChange} />
+              </label>
+              <label>
+                Ingrese nombre de la aplicación
+                <input name="app" onChange={handleChange} />
+              </label>
+              <button type="submit">Generar</button>
+            </form>
+            <span>{password}</span>
           </div>
         </main>
-        <footer>
-          <div className="wrapper">
-            <p>- Hecho por Heraldo Fortuna -</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
