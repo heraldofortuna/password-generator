@@ -22,6 +22,15 @@ const App = () => {
         <Header />
         <main>
           <section className="section">
+            <h2>
+              Genere sus propias contraseñas
+              <br />
+              de forma <span className="highlight">
+                rápida
+              </span> y <span className="highlight">segura</span>
+            </h2>
+          </section>
+          <section className="section">
             <Form getSubmitValue={setSubmitValue} />
           </section>
           <section className="section section--secondary">

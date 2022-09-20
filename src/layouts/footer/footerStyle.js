@@ -3,13 +3,8 @@ import styled from "styled-components";
 const StyledFooter = styled.footer`
   background-color: var(--color-dark);
   border-top: 1px solid var(--color-gray-3);
-  padding-block-start: 16px;
-  padding-block-end: 16px;
-
-  @media screen and (min-width: 768px) {
-    padding-block-start: 32px;
-    padding-block-end: 32px;
-  }
+  padding-block-start: 32px;
+  padding-block-end: 32px;
 `;
 
 const StyledContainer = styled.div`

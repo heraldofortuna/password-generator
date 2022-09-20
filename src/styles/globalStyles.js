@@ -84,6 +84,21 @@ const GlobalStyle = createGlobalStyle`
   .section--secondary {
     background-color: var(--color-pink);
   }
+
+  .highlight {
+    color: var(--color-blue);
+    position: relative;
+  }
+
+  .highlight::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: var(--color-yellow);
+    bottom: -2px;
+    left: 0;
+  }
 `;
 
 export default GlobalStyle;
