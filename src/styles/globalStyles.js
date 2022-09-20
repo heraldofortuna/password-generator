@@ -61,10 +61,28 @@ const GlobalStyle = createGlobalStyle`
     font: var(--headline4);
   }
 
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   .container {
     padding-inline-start: 16px;
     padding-inline-end: 16px;
     margin: auto;
+  }
+
+  .section {
+    background-color: var(--color-white);
+    padding-block-start: 36px;
+    padding-block-end: 36px;
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+  }
+
+  .section--secondary {
+    background-color: var(--color-pink);
   }
 `;
 

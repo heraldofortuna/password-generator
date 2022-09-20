@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import { StyledForm } from "./formStyle";
 import Input from "../input/Input";
 import Button from "../button/Button";
-import generatePassword from "../../constants/generatePassword";
 
-const Form = () => {
+const Form = ({ getSubmitValue }) => {
   const [words, setWords] = useState({ keyword: "", app: "" });
-  const [password, setPassword] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -18,7 +16,7 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setPassword(generatePassword(words));
+    getSubmitValue(words);
   };
 
   return (

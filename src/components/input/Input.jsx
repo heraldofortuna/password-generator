@@ -2,11 +2,16 @@ import React from "react";
 
 import { StyledContainer, StyledInput } from "./inputStyle";
 
-const Input = ({ label, name, onChange }) => {
+const Input = ({ label, name, value, readOnly, onChange }) => {
   return (
     <StyledContainer>
       {label}
-      <StyledInput name={name} onChange={onChange} />
+      <StyledInput
+        name={name}
+        value={value}
+        readOnly={readOnly}
+        onChange={onChange}
+      />
     </StyledContainer>
   );
 };

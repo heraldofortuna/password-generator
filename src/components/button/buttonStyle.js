@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledButton = styled.button`
+  max-inline-size: 450px;
   background-color: unset;
   color: var(--color-dark);
   text-align: center;
@@ -14,6 +15,11 @@ const StyledButton = styled.button`
   border-radius: 24px;
   cursor: pointer;
   transition: var(--transition);
+
+  &: hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
 `;
 
 export { StyledButton };
