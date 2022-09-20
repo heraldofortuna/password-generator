@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   StyledHeader,
@@ -7,8 +7,19 @@ import {
 } from "./headerStyle";
 
 const Header = () => {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => setOffset(window.pageYOffset);
+
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <StyledHeader>
+    <StyledHeader className={offset >= 80 && "header--scroll"}>
       <StyledContainer className="container">
         <StyledLogo href="/">Password Generator</StyledLogo>
       </StyledContainer>

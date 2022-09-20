@@ -85,6 +85,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--color-pink);
   }
 
+  .header--scroll {
+    border-bottom: 1px solid var(--color-dark);
+  }
+
   .highlight {
     color: var(--color-blue);
     position: relative;
