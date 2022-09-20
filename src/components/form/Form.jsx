@@ -27,7 +27,7 @@ const Form = ({ getSubmitValue }) => {
         onChange={handleChange}
       />
       <Input
-        label="Ingrese nombre de la aplicación"
+        label="Ingrese el dominio de la app"
         name="app"
         onChange={handleChange}
       />
